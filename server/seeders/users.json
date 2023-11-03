@@ -1,0 +1,44 @@
+[
+  {
+    "username": "Jeffrey",
+    "email": "jeff@home.com",
+    "password": "password123",
+    "savedBooks": [
+      {
+        "authors": "George R R Martin",
+        "description": "Lorem Ipsum",
+        "bookId": "1",
+        "Image": "Lorem Ipsum",
+        "title": "Game of Thrones"
+      }
+    ]
+  },
+  {
+    "username": "Sarah",
+    "email": "sarah@home.com",
+    "password": "password123",
+    "savedBooks": [
+      {
+        "authors": "George R R Martin",
+        "description": "Lorem Ipsum",
+        "bookId": "1",
+        "Image": "Lorem Ipsum",
+        "title": "Game of Thrones"
+      }
+    ]
+  },
+  {
+    "username": "Tucker",
+    "email": "tucker@home.com",
+    "password": "password123",
+    "savedBooks": [
+      {
+        "authors": "George R R Martin",
+        "description": "Lorem Ipsum",
+        "bookId": "1",
+        "Image": "Lorem Ipsum",
+        "title": "Game of Thrones"
+      }
+    ]
+  }
+]
