@@ -17,9 +17,7 @@ const SignupForm = () => {
   const [validated] = useState(false);
   // set state for alert
   const [showAlert, setShowAlert] = useState(false);
-  const [createUser, { error, data }] = useMutation(CREATE_USER, {
-    variables: { ...userFormData },
-  });
+  const [createUser, { error, data }] = useMutation(CREATE_USER);
 
   const handleInputChange = (event) => {
     const { name, value } = event.target;
@@ -37,7 +35,9 @@ const SignupForm = () => {
     }
 
     try {
-      const { data } = await createUser();
+      const { data } = await createUser({
+        variables: { ...userFormData },
+      });
 
       console.log(data);
       // const response = await createUser(userFormData);
