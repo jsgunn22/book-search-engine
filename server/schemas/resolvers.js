@@ -7,7 +7,7 @@ const resolvers = {
       return User.find();
     },
     user: async (parent, { userId }) => {
-      return User.findById(userId);
+      return User.findById({ _id: userId });
     },
   },
   Mutation: {
@@ -18,11 +18,19 @@ const resolvers = {
 
       return { token, newUser };
     },
+
     login: async (parent, { email, password }) => {
+      console.log(email, password);
       const user = await User.findOne({ email });
 
       if (!user) {
-        throw AuthenticationError();
+        throw AuthenticationError;
+      }
+
+      const correctPassword = await user.isCorrectPassword(password);
+
+      if (!correctPassword) {
+        throw AuthenticationError;
       }
 
       const token = signToken(user);
