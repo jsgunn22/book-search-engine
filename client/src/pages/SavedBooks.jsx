@@ -16,13 +16,13 @@ const SavedBooks = () => {
   const [userData, setUserData] = useState({});
 
   // THIS IS THE QUERY FOR A SINGLE USERS SAVED BOOKS
-  const { userId } = useParams();
+  const userId = Auth.getProfile().data._id;
 
   const { loading, data } = useQuery(QUERY_SINGLE_USER, {
     variables: { userId: userId },
   });
 
-  data?.setUserData(user || {});
+  // data?.setUserData(user || {});
 
   setUserData(data?.user || {});
 
